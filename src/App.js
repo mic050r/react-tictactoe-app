@@ -1,5 +1,7 @@
 import { Component } from "react";
+import ExpenseForm from "./components/ExpenseForm";
 import "./App.css"; // style 사용하기
+
 class App extends Component {
   render() {
     return(
@@ -8,6 +10,7 @@ class App extends Component {
 
         <div style={{ width: '100%', background: "white", padding: '1rem' }}>
           {/* Expense From */}
+          <ExpenseForm/>
         </div>
 
         <div style={{ width: '100%', background: "white", padding: '1rem' }}>
