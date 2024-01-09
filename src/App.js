@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import "./App.css"; // style 사용하기
 class App extends Component {
   render() {
     return(
