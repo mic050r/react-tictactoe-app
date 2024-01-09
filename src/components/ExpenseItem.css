@@ -1,0 +1,51 @@
+.item {
+  background-color: var(--mainWhite);
+  line-height: 3.5rem;
+  padding: 0;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+
+/* 마우스 위에 올리면 커지게 */
+.item:hover {
+  width: 100%;
+  transform: scale(1.02);
+}
+
+.info {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: space-between;
+  /* 원과 항목 사이 넓히게 */
+}
+
+.expense {
+  margin-right: 2rem;
+}
+
+.amout {
+  font-weight: 300;
+  font-size: 1rem;
+  border-radius: 2px;
+  padding: 1px 3px;
+}
+
+.clear-btn,
+.edit-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.clear-btn {
+  color: var(--mainRed);
+}
+
+.edit-btn {
+  color: var(--mainGreen);
+}
