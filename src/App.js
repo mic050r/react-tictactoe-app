@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
 import "./App.css"; // style 사용하기
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
 
         <div style={{ width: '100%', background: "white", padding: '1rem' }}>
           {/* Expense List */}
+          <ExpenseList/>
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'end', marginTop: '1rem' }}>
