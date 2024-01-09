@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import "./ExpenseList.css"
 export class ExpenseList extends Component {
   render() {
     return (
