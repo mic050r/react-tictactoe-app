@@ -3,7 +3,14 @@ import React, { Component } from 'react'
 export class ExpenseList extends Component {
   render() {
     return (
-      <div>ExpenseList</div>
+      <>
+        <ul className='list'>
+          {/* Expense Item */}
+        </ul>
+        <button  className='btn'>
+          목록 지우기
+        </button>
+      </>
     )
   }
 }
