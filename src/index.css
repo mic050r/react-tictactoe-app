@@ -1,0 +1,22 @@
+:root {
+  --primaryColor: #6f79a7;
+  --secondColor: #cae1e8;
+  --mainWhite: #FFF;
+  --mainBalck: #222;
+  --mainRed: #C45151;
+  --mainGreen: #4CAF50;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--secondColor);
+  color: var(--mainBalck);
+}
+
+h1 {
+  margin: 1rem 0;
+}
