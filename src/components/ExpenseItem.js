@@ -13,7 +13,9 @@ export class ExpenseItem extends Component {
           <button className="edit-btn">
             <MdEdit />
           </button>
-          <button className="clear-btn">
+          <button
+            className="clear-btn"
+            onClick={() => this.props.handleDelete(this.props.expense.id)}>
             <MdDelete />
           </button>
         </div>

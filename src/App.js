@@ -9,6 +9,13 @@ class App extends Component {
     { id: 2, charge: "교통비", amount: 400 },
     { id: 3, charge: "식비", amount: 1200 },
   ];
+
+  handleDelete = (id) => {
+    const newExpenses = this.initialExpense.filter(
+      (expense) => expense.id != id
+    );
+    console.log(newExpenses);
+  };
   render() {
     return (
       <main className="main-container">
@@ -21,7 +28,10 @@ class App extends Component {
 
         <div style={{ width: "100%", background: "white", padding: "1rem" }}>
           {/* Expense List */}
-          <ExpenseList initialExpense={this.initialExpense} />
+          <ExpenseList
+            initialExpense={this.initialExpense}
+            handleDelete={this.handleDelete}
+          />
         </div>
 
         <div
