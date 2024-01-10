@@ -6,8 +6,8 @@ export class ExpenseItem extends Component {
     return (
       <li className="item">
         <div className="info">
-          <span className="expense">렌트비</span>
-          <span className="amount"> 100000원</span>
+          <span className="expense">{this.props.expense.charge}</span>
+          <span className="amount">{this.props.expense.amount}</span>
         </div>
         <div>
           <button className="edit-btn">
