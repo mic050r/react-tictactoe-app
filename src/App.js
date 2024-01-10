@@ -4,17 +4,23 @@ import ExpenseList from "./components/ExpenseList";
 import "./App.css"; // style 사용하기
 
 class App extends Component {
-  initialExpense = [
-    { id: 1, charge: "렌트비", amount: 1600 },
-    { id: 2, charge: "교통비", amount: 400 },
-    { id: 3, charge: "식비", amount: 1200 },
-  ];
+  constructor(props) {
+    super(props);
+    this.state = {
+      expenses: [
+        { id: 1, charge: "렌트비", amount: 1600 },
+        { id: 2, charge: "교통비", amount: 400 },
+        { id: 3, charge: "식비", amount: 1200 },
+      ],
+    };
+  }
 
   handleDelete = (id) => {
-    const newExpenses = this.initialExpense.filter(
+    const newExpenses = this.state.expenses.filter(
       (expense) => expense.id != id
     );
     console.log(newExpenses);
+    this.setState({ expenses: newExpenses });
   };
   render() {
     return (
@@ -29,7 +35,7 @@ class App extends Component {
         <div style={{ width: "100%", background: "white", padding: "1rem" }}>
           {/* Expense List */}
           <ExpenseList
-            initialExpense={this.initialExpense}
+            initialExpense={this.state.expenses}
             handleDelete={this.handleDelete}
           />
         </div>
