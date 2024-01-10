@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 
 export class ExpenseList extends Component {
   render() {
+    console.log(this.props.initialExpense);
     return (
       <>
         <ul className="list">
