@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import "./App.css"; // style 사용하기
+import Alert from "./components/Alert";
 
 const App = () => {
   const [charge, setCharge] = useState("");
   const [amount, setAmount] = useState(0);
-
+  const [alert, setAlert] = useState({ show: false });
   const [expenses, setExpenses] = useState([
     { id: 1, charge: "렌트비", amount: 1600 },
     { id: 2, charge: "교통비", amount: 400 },
@@ -27,6 +28,14 @@ const App = () => {
     const newExpenses = expenses.filter((expense) => expense.id != id);
     console.log(newExpenses);
     setExpenses(newExpenses);
+    handleAlert({ type: "danger", text: "아이템이 삭제 되었습니다!" });
+  };
+
+  const handleAlert = ({ type, text }) => {
+    setAlert({ show: true, type, text });
+    setTimeout(() => {
+      setAlert({ show: false });
+    }, 7000);
   };
 
   const handleSubmit = (e) => {
@@ -38,12 +47,18 @@ const App = () => {
       setExpenses(newExpenses);
       setCharge("");
       setAmount(0);
+      handleAlert({ type: "success", text: "아이템이 생성되었습니다!" });
     } else {
       console.log("error");
+      handleAlert({
+        type: "danger",
+        text: "charge는 빈 값일 수 없으면 amount는 0보다 커야합니다.",
+      });
     }
   };
   return (
     <main className="main-container">
+      {alert.show ? <Alert type={alert.type} text={alert.text} /> : null}
       <h1>예산 계산기</h1>
 
       <div style={{ width: "100%", background: "white", padding: "1rem" }}>
