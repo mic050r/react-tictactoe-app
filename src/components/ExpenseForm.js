@@ -8,6 +8,7 @@ const ExpenseForm = ({
   handleAmount,
   amount,
   handleSubmit,
+  edit,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -41,7 +42,7 @@ const ExpenseForm = ({
       </div>
       {/* 제출 버튼 */}
       <button type="submit" className="btn">
-        제출
+        {edit ? "수정" : "제출"}
         <MdSend className="btn-icon" />
       </button>
     </form>
