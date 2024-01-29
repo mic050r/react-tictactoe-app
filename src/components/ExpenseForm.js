@@ -2,9 +2,15 @@ import React from "react";
 import "./ExpenseForm.css";
 import { MdSend } from "react-icons/md";
 
-const ExpenseForm = () => {
+const ExpenseForm = ({
+  handleCharge,
+  charge,
+  handleAmount,
+  amount,
+  handleSubmit,
+}) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {/* 지출항목 부분 */}
       <div className="form-center">
         <div className="form-group">
@@ -14,18 +20,22 @@ const ExpenseForm = () => {
             className="form-control"
             id="charge"
             name="charge"
+            value={charge}
             placeholder="예) 렌트비"
+            onChange={handleCharge}
           />
         </div>
         {/* 비용 부분 */}
         <div className="form-group">
-          <label htmlFor="amout">비용</label>
+          <label htmlFor="amount">비용</label>
           <input
             type="number"
             className="form-control"
-            id="amout"
-            name="amout"
+            id="amount"
+            name="amount"
+            value={amount}
             placeholder="예) 1000원"
+            onChange={handleAmount}
           />
         </div>
       </div>
